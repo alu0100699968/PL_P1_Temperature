@@ -13,7 +13,7 @@ function calculate() {
     num = parseFloat(num);
     if (type == 'c' || type == 'C') {
       result = (num * 9/5)+32;
-      result = result = result.toFixed(1) + " Fahrenheit";
+      result = result = result.toFixed(1) + " Farenheit";
     }
     else {
       result = (num - 32)*5/9;
