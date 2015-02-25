@@ -21,7 +21,7 @@
   "description": "Practica 1 de Procesadores de Lenguajes - Conversor de Temperaturas",
   "main": "javascripts/temperature.js",
   "scripts": {
-    "test": "open tests/index.html"
+    "test": "gulp tests"
   },
   "repository": {
     "type": "git",
