@@ -8,7 +8,7 @@ var minifyCSS  = require('gulp-minify-css');
 var karma = require('karma').server;
 
 gulp.task('minify', function () {
-  gulp.src('temperature.js')
+  gulp.src('./javascripts/temperature.js')
   .pipe(uglify())
   .pipe(gulp.dest('minified'));
 
@@ -16,7 +16,7 @@ gulp.task('minify', function () {
   .pipe(minifyHTML())
   .pipe(gulp.dest('./minified/'))
 
-  gulp.src('./*.css')
+  gulp.src('./stylesheets/*.css')
   .pipe(minifyCSS({keepBreaks:true}))
   .pipe(gulp.dest('./minified/'))
 });
@@ -26,6 +26,13 @@ gulp.task('clean', function(cb) {
 });
 
 gulp.task('tests', function(done) {
+  return karma.start({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  }, done);
+});
+
+gulp.task('default', function(done) {
   return karma.start({
     configFile: __dirname + '/karma.conf.js',
     singleRun: true
